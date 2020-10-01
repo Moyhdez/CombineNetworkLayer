@@ -63,8 +63,8 @@ extension ViewController {
 
 extension ViewController {
     func getMovies() {
-        do {
-            try self.networkManager.getNewMovies(page: 1)
+            self.networkManager
+                .getNewMovies(page: 1)
                 .receive(on: DispatchQueue.main)
                 .sink { completion in
                     switch completion {
@@ -78,9 +78,6 @@ extension ViewController {
                     self.movies = response.results
                 }
                 .store(in: &disposables)
-        } catch {
-            self.show(error: error.localizedDescription)
-        }
     }
 }
 

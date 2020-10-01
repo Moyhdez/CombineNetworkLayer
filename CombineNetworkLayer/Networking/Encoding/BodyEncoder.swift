@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol BodyEncoder {
-    static func encode(urlRequest: inout URLRequest, with body: Encodable) throws
+    static func encode(urlRequest: inout URLRequest, with body: Encodable, encoder: JSONEncoder) throws
 }

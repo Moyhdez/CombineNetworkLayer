@@ -14,14 +14,15 @@ enum NetworkEnviroment {
     case staging
 }
 
-enum MovieApi {
+enum MovieEndPoint {
     case recommended(id: Int)
     case popular(page: Int)
     case newMovies(page: Int)
     case video(id: Int)
 }
 
-extension MovieApi: EndPointType {
+extension MovieEndPoint: EndPointType {
+    
     var environmentBaseURL : String {
         switch MovieService.enviroment {
         case .production: return "https://api.themoviedb.org/3/movie/"

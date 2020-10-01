@@ -9,14 +9,21 @@
 import Foundation
 
 public struct JSONParameterEncoder: BodyEncoder {
-    public static func encode(urlRequest: inout URLRequest, with body: Encodable) throws {
+    
+    public static func encode(urlRequest: inout URLRequest, with body: Encodable, encoder: JSONEncoder) throws {
         do {
-            urlRequest.httpBody = try body.encoded()
+            urlRequest.httpBody = try body.encode(with: encoder)
             if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
                 urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             }
         } catch {
-            throw NetworkError.encodingFailed
+            throw NetworkingError.unableToEncode
         }
+    }
+}
+
+extension Encodable {
+    func encode(with encoder: JSONEncoder) throws -> Data {
+        return try encoder.encode(self)
     }
 }

@@ -10,40 +10,23 @@ import Foundation
 import Combine
 
 class MovieService: NetworkManager {
+    
     static let enviroment: NetworkEnviroment = .production
     static let movieAPIKey = "7b692bb4f615f7a9c27b36097d5189e0"
-    var router: Router<MovieApi>
+    var router: Router<MovieEndPoint>
+    var decoder: JSONDecoder
     
-    init(router: Router<MovieApi>) {
+    init(router: Router<MovieEndPoint>, decoder: JSONDecoder) {
         self.router = router
+        self.decoder = decoder
     }
     
-    func getNewMovies(page: Int) throws -> AnyPublisher<MovieApiResponse, Error> {
-        do {
-            return try router.run(.newMovies(page: 1))
-                .tryMap { data, response -> MovieApiResponse in
-                    guard let httpResponse = response as? HTTPURLResponse else {
-                        throw NetworkError.failed
-                    }
-                    let result = self.handleNetwork(httpResponse)
-                    switch result {
-                    case .success:
-                        do {
-                            return try MovieApiResponse(data)
-                        } catch {
-                            throw NetworkError.unableToDecode
-                        }
-                    case .failure(let networkError):
-                        throw networkError
-                    }
-                }
-                .mapError({ (error) -> Error in
-                    print(error.localizedDescription)
-                    return error
-                })
-                .eraseToAnyPublisher()
-        } catch {
-            throw NetworkError.encodingFailed
-        }
+    func getNewMovies(page: Int) -> AnyPublisher<MovieApiResponse, Error> {
+        return router
+            .run(.newMovies(page: 1))
+//            .validateStatusCode({ (200..<300).contains($0) })
+//            .mapJsonError(to: ApiErrorResponse.self, decoder: JSONDecoder())
+            .mapJsonValue(to: MovieApiResponse.self, decoder: decoder)
+            .eraseToAnyPublisher()
     }
 }

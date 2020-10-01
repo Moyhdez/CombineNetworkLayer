@@ -11,11 +11,24 @@ import Combine
 
 class Router<EndPoint: EndPointType>: NetworkRouter {
     
-    func run(_ route: EndPoint) throws -> AnyPublisher<URLSession.DataTaskPublisher.Output, URLSession.DataTaskPublisher.Failure> {
-        let request = try buildRequest(from: route)
-        return URLSession.shared
-            .dataTaskPublisher(for: request)
-            .eraseToAnyPublisher()
+    var session: URLSession
+    var bodyEncoder: JSONEncoder
+    
+    init(session: URLSession, bodyEncoder: JSONEncoder) {
+        self.session = session
+        self.bodyEncoder = bodyEncoder
+    }
+    
+    func run(_ route: EndPoint) -> AnyPublisher<DataTaskResult, URLError> {
+        do {
+            let request = try buildRequest(from: route)
+            return self.session
+                .dataTaskPublisher(for: request)
+                .eraseToAnyPublisher()
+        } catch {
+            return Fail(error: URLError(URLError.badURL))
+                .eraseToAnyPublisher()
+        }
     }
     
     fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest {
@@ -49,7 +62,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     fileprivate func configureParameters(bodyParameters: Encodable?, urlParameters: Parameters?, request: inout URLRequest) throws {
         do {
             if let bodyParameters = bodyParameters {
-                try JSONParameterEncoder.encode(urlRequest: &request, with: bodyParameters)
+                try JSONParameterEncoder.encode(urlRequest: &request, with: bodyParameters, encoder: bodyEncoder)
             }
             if let urlParameters = urlParameters {
                 try URLParameterEncoder.encode(urlRequest: &request, with: urlParameters)

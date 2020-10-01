@@ -9,7 +9,9 @@
 import Foundation
 import Combine
 
+typealias DataTaskResult = (data: Data, response: URLResponse)
+
 protocol NetworkRouter {
     associatedtype EndPoint: EndPointType
-    func run(_ route: EndPoint) throws -> AnyPublisher<URLSession.DataTaskPublisher.Output, URLSession.DataTaskPublisher.Failure>
+    func run(_ route: EndPoint) throws -> AnyPublisher<DataTaskResult, URLError>
 }

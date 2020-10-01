@@ -16,12 +16,10 @@
 		505E39C2252544880073E65C /* CombineNetworkLayerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E39C1252544880073E65C /* CombineNetworkLayerUITests.swift */; };
 		505E39E12525467B0073E65C /* MovieApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E39E02525467B0073E65C /* MovieApiResponse.swift */; };
 		505E39E9252546830073E65C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E39E8252546830073E65C /* Movie.swift */; };
-		505E39EF252546C20073E65C /* Codable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E39EE252546C20073E65C /* Codable+Ext.swift */; };
 		505E3A3325254E9A0073E65C /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A2B25254E990073E65C /* HTTPTask.swift */; };
 		505E3A3425254E9A0073E65C /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A2C25254E990073E65C /* NetworkLogger.swift */; };
 		505E3A3525254E9A0073E65C /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A2D25254E990073E65C /* NetworkRouter.swift */; };
 		505E3A3625254E9A0073E65C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A2E25254E9A0073E65C /* NetworkManager.swift */; };
-		505E3A3725254E9A0073E65C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A2F25254E9A0073E65C /* NetworkError.swift */; };
 		505E3A3825254E9A0073E65C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A3025254E9A0073E65C /* Router.swift */; };
 		505E3A3925254E9A0073E65C /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A3125254E9A0073E65C /* EndPointType.swift */; };
 		505E3A3A25254E9A0073E65C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A3225254E9A0073E65C /* HTTPMethod.swift */; };
@@ -31,6 +29,9 @@
 		505E3A5925254F0D0073E65C /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A5525254F0D0073E65C /* ParameterEncoder.swift */; };
 		505E3A5A25254F0D0073E65C /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A5625254F0D0073E65C /* URLParameterEncoder.swift */; };
 		505E3A5B25254F0D0073E65C /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A5725254F0D0073E65C /* JSONParameterEncoder.swift */; };
+		50F5373725267C4200FA9485 /* Publisher  + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F5373625267C4200FA9485 /* Publisher  + Ext.swift */; };
+		50F5374825267EC800FA9485 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F5374725267EC800FA9485 /* NetworkError.swift */; };
+		50F5374D252681CE00FA9485 /* JSONDecoder + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F5374C252681CE00FA9485 /* JSONDecoder + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +67,10 @@
 		505E39C3252544880073E65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		505E39E02525467B0073E65C /* MovieApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApiResponse.swift; sourceTree = "<group>"; };
 		505E39E8252546830073E65C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		505E39EE252546C20073E65C /* Codable+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Ext.swift"; sourceTree = "<group>"; };
 		505E3A2B25254E990073E65C /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		505E3A2C25254E990073E65C /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
 		505E3A2D25254E990073E65C /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		505E3A2E25254E9A0073E65C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		505E3A2F25254E9A0073E65C /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		505E3A3025254E9A0073E65C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		505E3A3125254E9A0073E65C /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		505E3A3225254E9A0073E65C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -81,6 +80,9 @@
 		505E3A5525254F0D0073E65C /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		505E3A5625254F0D0073E65C /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		505E3A5725254F0D0073E65C /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		50F5373625267C4200FA9485 /* Publisher  + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher  + Ext.swift"; sourceTree = "<group>"; };
+		50F5374725267EC800FA9485 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = ../../../../../../.Trash/NetworkError.swift; sourceTree = "<group>"; };
+		50F5374C252681CE00FA9485 /* JSONDecoder + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,10 +203,10 @@
 		505E39D92525463E0073E65C /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				505E3A3125254E9A0073E65C /* EndPointType.swift */,
 				505E3A3225254E9A0073E65C /* HTTPMethod.swift */,
 				505E3A2B25254E990073E65C /* HTTPTask.swift */,
-				505E3A2F25254E9A0073E65C /* NetworkError.swift */,
+				505E3A3125254E9A0073E65C /* EndPointType.swift */,
+				50F5374725267EC800FA9485 /* NetworkError.swift */,
 				505E3A2C25254E990073E65C /* NetworkLogger.swift */,
 				505E3A2E25254E9A0073E65C /* NetworkManager.swift */,
 				505E3A2D25254E990073E65C /* NetworkRouter.swift */,
@@ -224,7 +226,8 @@
 		505E39ED252546B70073E65C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				505E39EE252546C20073E65C /* Codable+Ext.swift */,
+				50F5373625267C4200FA9485 /* Publisher  + Ext.swift */,
+				50F5374C252681CE00FA9485 /* JSONDecoder + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,7 +390,6 @@
 			files = (
 				505E3A5B25254F0D0073E65C /* JSONParameterEncoder.swift in Sources */,
 				505E3A5A25254F0D0073E65C /* URLParameterEncoder.swift in Sources */,
-				505E39EF252546C20073E65C /* Codable+Ext.swift in Sources */,
 				505E39A4252544830073E65C /* ViewController.swift in Sources */,
 				505E39E9252546830073E65C /* Movie.swift in Sources */,
 				505E3A3625254E9A0073E65C /* NetworkManager.swift in Sources */,
@@ -395,9 +397,11 @@
 				505E3A3925254E9A0073E65C /* EndPointType.swift in Sources */,
 				505E39E12525467B0073E65C /* MovieApiResponse.swift in Sources */,
 				505E3A3A25254E9A0073E65C /* HTTPMethod.swift in Sources */,
+				50F5374D252681CE00FA9485 /* JSONDecoder + Ext.swift in Sources */,
+				50F5374825267EC800FA9485 /* NetworkError.swift in Sources */,
 				505E3A3425254E9A0073E65C /* NetworkLogger.swift in Sources */,
 				505E3A3525254E9A0073E65C /* NetworkRouter.swift in Sources */,
-				505E3A3725254E9A0073E65C /* NetworkError.swift in Sources */,
+				50F5373725267C4200FA9485 /* Publisher  + Ext.swift in Sources */,
 				505E3A5825254F0D0073E65C /* BodyEncoder.swift in Sources */,
 				505E3A5925254F0D0073E65C /* ParameterEncoder.swift in Sources */,
 				505E39A0252544830073E65C /* AppDelegate.swift in Sources */,
