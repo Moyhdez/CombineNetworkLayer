@@ -25,13 +25,12 @@
 		505E3A3A25254E9A0073E65C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A3225254E9A0073E65C /* HTTPMethod.swift */; };
 		505E3A4825254EBF0073E65C /* MovieEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A4725254EBF0073E65C /* MovieEndPoint.swift */; };
 		505E3A5025254ED20073E65C /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A4F25254ED20073E65C /* MovieService.swift */; };
-		505E3A5825254F0D0073E65C /* BodyEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A5425254F0D0073E65C /* BodyEncoder.swift */; };
 		505E3A5925254F0D0073E65C /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A5525254F0D0073E65C /* ParameterEncoder.swift */; };
 		505E3A5A25254F0D0073E65C /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A5625254F0D0073E65C /* URLParameterEncoder.swift */; };
-		505E3A5B25254F0D0073E65C /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505E3A5725254F0D0073E65C /* JSONParameterEncoder.swift */; };
 		50F5373725267C4200FA9485 /* Publisher  + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F5373625267C4200FA9485 /* Publisher  + Ext.swift */; };
 		50F5374825267EC800FA9485 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F5374725267EC800FA9485 /* NetworkError.swift */; };
 		50F5374D252681CE00FA9485 /* JSONDecoder + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F5374C252681CE00FA9485 /* JSONDecoder + Ext.swift */; };
+		50F53766252698D200FA9485 /* Encodable + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F53765252698D200FA9485 /* Encodable + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,13 +75,12 @@
 		505E3A3225254E9A0073E65C /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		505E3A4725254EBF0073E65C /* MovieEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEndPoint.swift; sourceTree = "<group>"; };
 		505E3A4F25254ED20073E65C /* MovieService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
-		505E3A5425254F0D0073E65C /* BodyEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyEncoder.swift; sourceTree = "<group>"; };
 		505E3A5525254F0D0073E65C /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		505E3A5625254F0D0073E65C /* URLParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
-		505E3A5725254F0D0073E65C /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		50F5373625267C4200FA9485 /* Publisher  + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher  + Ext.swift"; sourceTree = "<group>"; };
 		50F5374725267EC800FA9485 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = ../../../../../../.Trash/NetworkError.swift; sourceTree = "<group>"; };
 		50F5374C252681CE00FA9485 /* JSONDecoder + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder + Ext.swift"; sourceTree = "<group>"; };
+		50F53765252698D200FA9485 /* Encodable + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +226,7 @@
 			children = (
 				50F5373625267C4200FA9485 /* Publisher  + Ext.swift */,
 				50F5374C252681CE00FA9485 /* JSONDecoder + Ext.swift */,
+				50F53765252698D200FA9485 /* Encodable + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -235,8 +234,6 @@
 		505E3A1E25254BF20073E65C /* Encoding */ = {
 			isa = PBXGroup;
 			children = (
-				505E3A5425254F0D0073E65C /* BodyEncoder.swift */,
-				505E3A5725254F0D0073E65C /* JSONParameterEncoder.swift */,
 				505E3A5525254F0D0073E65C /* ParameterEncoder.swift */,
 				505E3A5625254F0D0073E65C /* URLParameterEncoder.swift */,
 			);
@@ -388,8 +385,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				505E3A5B25254F0D0073E65C /* JSONParameterEncoder.swift in Sources */,
 				505E3A5A25254F0D0073E65C /* URLParameterEncoder.swift in Sources */,
+				50F53766252698D200FA9485 /* Encodable + Ext.swift in Sources */,
 				505E39A4252544830073E65C /* ViewController.swift in Sources */,
 				505E39E9252546830073E65C /* Movie.swift in Sources */,
 				505E3A3625254E9A0073E65C /* NetworkManager.swift in Sources */,
@@ -402,7 +399,6 @@
 				505E3A3425254E9A0073E65C /* NetworkLogger.swift in Sources */,
 				505E3A3525254E9A0073E65C /* NetworkRouter.swift in Sources */,
 				50F5373725267C4200FA9485 /* Publisher  + Ext.swift in Sources */,
-				505E3A5825254F0D0073E65C /* BodyEncoder.swift in Sources */,
 				505E3A5925254F0D0073E65C /* ParameterEncoder.swift in Sources */,
 				505E39A0252544830073E65C /* AppDelegate.swift in Sources */,
 				505E39A2252544830073E65C /* SceneDelegate.swift in Sources */,

@@ -62,13 +62,19 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     fileprivate func configureParameters(bodyParameters: Encodable?, urlParameters: Parameters?, request: inout URLRequest) throws {
         do {
             if let bodyParameters = bodyParameters {
-                try JSONParameterEncoder.encode(urlRequest: &request, with: bodyParameters, encoder: bodyEncoder)
+                request.httpBody = try bodyParameters.encode(with: self.bodyEncoder)
+                if request.value(forHTTPHeaderField: "Content-Type") == nil {
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                }
             }
             if let urlParameters = urlParameters {
                 try URLParameterEncoder.encode(urlRequest: &request, with: urlParameters)
+                if request.value(forHTTPHeaderField: "Content-Type") == nil {
+                    request.setValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
+                }
             }
         } catch {
-            throw error
+            throw NetworkingError.unableToEncode
         }
     }
 }
